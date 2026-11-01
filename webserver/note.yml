@@ -1,0 +1,23 @@
+info:
+  name: note
+  type: http
+  seq: 6
+
+http:
+  method: POST
+  url: "{{baseURL}}/notes"
+  body:
+    type: json
+    data: |-
+      {
+        "Title": "iNote",
+        "Body": "New posted note"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
