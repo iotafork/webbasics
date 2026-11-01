@@ -1,0 +1,17 @@
+# build output
+/bin/
+/dist/
+*.exe
+*.test
+*.out
+coverage.*
+
+# local config & secrets (you'll meet .env files in the REST API part)
+.env
+.env.*
+!.env.example
+
+# editors & OS
+.idea/
+.DS_Store
+*.swp

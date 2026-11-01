@@ -1,0 +1,16 @@
+version: "2"
+
+linters:
+  default: standard        # errcheck, govet, ineffassign, staticcheck, unused
+  enable:
+    - errorlint            # use errors.Is/As and %w, not == or %v on errors
+    - misspell             # typos in comments and strings
+    - bodyclose            # unclosed http response bodies (you'll need this in the REST API part)
+
+formatters:
+  enable:
+    - gofmt
+    - goimports
+
+run:
+  timeout: 3m

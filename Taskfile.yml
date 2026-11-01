@@ -1,0 +1,9 @@
+version: "3"
+tasks:
+  check:
+    desc: fmt, vet, lint, test
+    cmds:
+      - gofmt -s -w .
+      - go vet ./...
+      - golangci-lint run ./...
+      - go test -race -count=1 ./...
