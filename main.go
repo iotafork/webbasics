@@ -25,6 +25,7 @@ func main() {
 
 	// health route
 	mux.HandleFunc("GET /health", func(w http.ResponseWriter, r *http.Request) {
+		//nolint:errcheck
 		fmt.Fprintln(w, "ok")
 	})
 
@@ -42,6 +43,7 @@ func main() {
 	mux.HandleFunc("GET /hello", func(w http.ResponseWriter, r *http.Request) {
 		if strings.Contains(r.Header.Get("Accept"), "text/plain") {
 			w.Header().Set("Content-Type", "text/plain; charset=utf-8")
+			//nolint:errcheck
 			fmt.Fprintln(w, "hello, Gopher")
 			return
 		}
